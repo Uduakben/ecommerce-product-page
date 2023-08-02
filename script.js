@@ -1,29 +1,27 @@
+let productImg = document.getElementById("productImg");
+let btn = document.getElementsByClassName("btn");
 
+btn[0].onclick = function(){
+    productImg.src = "image1.png"
 
-let toastBox = document.getElementById("toastBox");
-
-let successMsg = 'Successfully Submitted';
-let errorMsg = 'Please fix the error and try again!';
-let invalidMsg = 'Invalid input, pls check again';
-
-function showToast(msg){
-    let toast = document.createElement('div');
-    toast.classList.add("toast");
-    toast.innerHTML = msg;
-    toastBox.appendChild(toast);
-
-    if(msg.includes('error')){
-        toast.classList.add('error');
+    for(bt of btn){
+        bt.classList.remove("active");
     }
-    if(msg.includes('Invalid')){
-        toast.classList.add('invalid')
-    }
-    if (msg === successMsg){
-        toast.classList.add('valid')
-    }
+    this.classList.add("active")
+}
 
-    setTimeout(()=>{
-        toast.remove();
-    }, 6000);
-} 
+btn[1].onclick = function(){
+    productImg.src = "image2.png"
+    for(bt of btn){
+        bt.classList.remove("active");
+    }
+    this.classList.add("active")
+}
 
+btn[2].onclick = function(){
+    productImg.src = "image3.png"
+    for(bt of btn){
+        bt.classList.remove("active");
+    }
+    this.classList.add("active")
+}
